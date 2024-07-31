@@ -1,0 +1,16 @@
+user_input = input("Enter text: ")
+compressed = ""
+prev_char = user_input[0]
+count = 1
+
+for char in user_input[1:]:
+    if char == prev_char:
+        count = count + 1
+    else:
+        compressed = compressed + str(count) + prev_char
+        prev_char = char
+        count = 1
+
+compressed = compressed + str(count) + prev_char
+
+print(compressed)
